@@ -14,10 +14,8 @@ import org.bukkit.inventory.BrewerInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.potion.PotionType;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
@@ -1113,23 +1111,7 @@ public class Brew implements Cloneable {
 	}
 
 	public void convertPre1_11(ItemStack item) {
-		removeLegacy(item);
-		PotionMeta potionMeta = ((PotionMeta) item.getItemMeta());
-		assert potionMeta != null;
-
-		potionMeta.setBasePotionData(new PotionData(PotionType.UNCRAFTABLE));
-		BrewLore lore = new BrewLore(this, potionMeta);
-		lore.removeEffects();
-
-		if (hasRecipe()) {
-			lore.addOrReplaceEffects(currentRecipe.getEffects(), getQuality());
-			currentRecipe.getColor().colorBrew(potionMeta, item, canDistill());
-		} else {
-			PotionColor.GREY.colorBrew(potionMeta, item, canDistill());
-		}
-		lore.removeLegacySpacing();
-		save(potionMeta);
-		item.setItemMeta(potionMeta);
+		throw new UnsupportedOperationException();
 	}
 
 	/**
