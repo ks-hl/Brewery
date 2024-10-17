@@ -7,6 +7,7 @@ import com.dre.brewery.Brew;
 import com.dre.brewery.P;
 import com.dre.brewery.filedata.BConfig;
 import com.dre.brewery.utility.BUtil;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -33,6 +34,9 @@ public class BrewLore {
 		} else {
 			lore = new ArrayList<>();
 		}
+
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
 	}
 
 	/**
