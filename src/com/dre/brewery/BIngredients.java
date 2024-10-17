@@ -11,6 +11,7 @@ import com.dre.brewery.recipe.RecipeItem;
 import com.dre.brewery.recipe.PotionColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.jetbrains.annotations.Nullable;
@@ -161,6 +162,9 @@ public class BIngredients {
 			cookedName = P.p.languageReader.get("Brew_Undefined");
 			PotionColor.CYAN.colorBrew(potionMeta, potion, true);
 		}
+
+		potionMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		potionMeta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
 
 		potionMeta.setDisplayName(P.p.color("&f" + cookedName));
 		//if (!P.use1_14) {

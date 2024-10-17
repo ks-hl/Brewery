@@ -114,7 +114,7 @@
 			<url>https://maven.enginehub.org/repo/</url>
 		</repository>
 		<repository>
-			<!-- GriefPrevention, SlimeFun, Towny, Brewery -->
+			<!-- GriefPrevention, SlimeFun, Brewery -->
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
@@ -142,7 +142,11 @@
 			<id>shopkeepers-repo</id>
 			<url>https://repo.projectshard.dev/repository/releases/</url>
 		</repository>
-
+		    <!-- Towny -->
+		<repository>
+			<id>glaremasters repo</id>
+			<url>https://repo.glaremasters.me/repository/towny/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -293,10 +297,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<!-- https://www.spigotmc.org/resources/towny-advanced.72694/history -->
-			<groupId>com.github.TownyAdvanced</groupId>
-			<artifactId>Towny</artifactId>
-			<version>0.100.0.0</version>
+            <!-- https://github.com/TownyAdvanced/Towny/wiki/TownyAPI#getting-started-with-towny-and-your-ide-->
+			<groupId>com.palmergames.bukkit.towny</groupId>
+			<artifactId>towny</artifactId>
+			<version>0.100.3.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>

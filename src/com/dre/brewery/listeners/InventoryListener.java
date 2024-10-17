@@ -123,6 +123,12 @@ public class InventoryListener implements Listener {
 						}
 					}
 				}
+				Brew brew = Brew.get(potion);
+				if (brew != null && !potion.hasItemFlag(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)) {
+					potion.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+					potion.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
+					item.setItemMeta(potion);
+				}
 				/*Brew brew = Brew.get(item);
 				if (brew != null) {
 					brew.touch();
