@@ -5,6 +5,7 @@ import org.bukkit.Color;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
 
@@ -70,6 +71,8 @@ public class PotionColor {
 			if (P.use1_11) {
 				// BasePotionData was only used for the Color, so starting with 1.12 we can use setColor instead
 				meta.setColor(getColor());
+			} else {
+				meta.setBasePotionData(new PotionData(getType()));
 			}
 		} else {
 			potion.setDurability(getColorId(destillable));
